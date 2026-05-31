@@ -114,10 +114,11 @@ async function fiqSend() {
   fiqTyping();
 
   try {
-    const res = await fetch(FIQ_WEBHOOK, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+   const res = await fetch(FIQ_WEBHOOK, {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: { 'Content-Type': 'text/plain' },
+  body: JSON.stringify({
         user_id: 'user_001',
         message: msg,
         team: ['Salah', 'Haaland', 'Palmer'],
